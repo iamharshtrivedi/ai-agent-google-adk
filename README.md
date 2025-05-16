@@ -2,11 +2,11 @@
 
 <img src="https://github.com/google/adk-docs/blob/main/docs/assets/agent-development-kit.png" alt="Agent Development Kit Logo" width="150">
 
-Welcome to the Sample Agent repository! This collection provides a ready-to-use agent built on top of the [Agent Development Kit](https://github.com/google/adk-python), designed to accelerate your development process.  These agents cover a range of common use cases and complexities, from simple conversational bots to complex multi-agent workflows.
+Welcome to the Sample Agent repository! This collection provides a ready-to-use agent built on top of the [Agent Development Kit](https://github.com/google/adk-python), designed to accelerate your development process.  This agent covers a range of common use cases and complexities, from simple conversational bots to complex multi-agent workflows.
 
-## ✨ What are Sample Agents?
+## ✨ What are Sample Agent?
 
-A Sample Agent is a functional starting point for a foundational agent designed for common application scenarios. It comes pre-packaged with core logic (like different agents using different tools, evaluation, human in the loop) relevant to a specific use case or industry. While functional, a Sample Agent typically requires customization (e.g., adjusting specific responses or integrating with external systems) to be fully operational. Each agent includes instructions on how it can be customized.
+A Sample Agent is a functional starting point for a foundational agent designed for common application scenarios. It comes pre-packaged with core logic (like different agent using different tools, evaluation, human in the loop) relevant to a specific use case or industry. While functional, a Sample Agent typically requires customization (e.g., adjusting specific responses or integrating with external systems) to be fully operational. Each agent includes instructions on how it can be customized.
 
 ## 🚀 Getting Started
 
@@ -23,18 +23,19 @@ Follow these steps to set up and run the sample agent:
 2.  **Clone this repository:**
 You can install the ADK samples via cloning it from the public repository by
     ```bash
-    git clone https://github.com/iamharshtrivedi/AIAgent.git
-    cd multi_tool_agents
+    git clone https://github.com/iamharshtrivedi/ai-agent-google-adk.git
     ```
 
-3.  **Explore the Agents:**
-
+3.  **Explore the Agent:**
+   ```bash
+    cd multi_tool_agents
+   ```
 *   Navigate to the `multi_tool_agents/` directory.
 *   The `multi_tool_agents/README.md` provides an overview and categorization of the available agent.
 *   Browse the subdirectories. Each contains a specific sample agent with its own `README.md`.
 
 4.  **Run an Agent:**
-    *   Navigate into that agent's parent directory (e.g., `cd parent_folder/`).
+    *   Navigate into that agent's parent directory (e.g., `cd ai-agent-google-adk/`).
     *   Run `adk web` and run the agent.
 
 **Notes:**
