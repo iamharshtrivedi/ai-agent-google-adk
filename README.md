@@ -109,9 +109,7 @@ GOOGLE_GENAI_USE_VERTEXAI=FALSE
 GOOGLE_API_KEY=PASTE_YOUR_ACTUAL_API_KEY_HERE
 ```
 
-**
-    *   **Replace the value PASTE_YOUR_ACTUAL_API_KEY_HERE with your real API key obtained from Google AI Studio.    *   **
-**
+**Replace the value PASTE_YOUR_ACTUAL_API_KEY_HERE with your real API key obtained from Google AI Studio.**
 
 3.  **Explore the Agent:**
    ```bash
