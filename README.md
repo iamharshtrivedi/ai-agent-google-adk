@@ -25,8 +25,10 @@ You can install the ADK samples via cloning it from the public repository by
     ```bash
     git clone https://github.com/iamharshtrivedi/ai-agent-google-adk.git
     ```
- **Create multi_tool_agent/__init__.py **
-
+ 
+```bash
+**Create multi_tool_agent/__init__.py **
+```
 ```bash
 from . import agent
 ```
