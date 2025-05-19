@@ -26,12 +26,12 @@ You can install the ADK samples via cloning it from the public repository by
     git clone https://github.com/iamharshtrivedi/ai-agent-google-adk.git
     ```
 
-**Create multi_tool_agent/\__init\__.py**
+**Create a file \__init\__.py in folder multi_tool_agent/**
 
 ```bash
 from . import agent
 ```
-**Create multi_tool_agent/agent.py**
+**Create a file agent.py in folder multi_tool_agent/**
 ```bash
 import datetime
 from zoneinfo import ZoneInfo
@@ -101,6 +101,14 @@ root_agent = Agent(
     tools=[get_weather, get_current_time],
 )
 ```
+
+**Create a file .env in folder multi_tool_agent/**
+
+```bash
+GOOGLE_GENAI_USE_VERTEXAI=FALSE
+GOOGLE_API_KEY=PASTE_YOUR_ACTUAL_API_KEY_HERE
+```
+
 3.  **Explore the Agent:**
    ```bash
     cd multi_tool_agents/agent.py
@@ -124,6 +132,8 @@ root_agent = Agent(
         agent.py
         .env
 ```
+
+
 
 ## ℹ️ Getting help
 
