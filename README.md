@@ -25,18 +25,12 @@ You can install the ADK samples via cloning it from the public repository by
     ```bash
     git clone https://github.com/iamharshtrivedi/ai-agent-google-adk.git
     ```
- 
-```bash
-Create __init__.py 
-```
-```bash
-multi_tool_agent/__init__.py
+ **Create multi_tool_agent/__init__.py**
 
+```bash
 from . import agent
 ```
-```bash
-Create multi_tool_agent/agent.py 
-```
+**Create multi_tool_agent/agent.py**
 ```bash
 import datetime
 from zoneinfo import ZoneInfo
