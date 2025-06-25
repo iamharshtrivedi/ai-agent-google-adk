@@ -4,7 +4,7 @@
 
 Welcome to the Sample Agent repository! This collection provides a ready-to-use agent built on top of the [Agent Development Kit](https://github.com/google/adk-python), designed to accelerate your development process.  This agent covers a range of common use cases and complexities, from simple conversational bots to complex multi-agent workflows.
 
-## ✨ What are Sample Agent?
+## ✨ What is Sample Agent?
 
 A Sample Agent is a functional starting point for a foundational agent designed for common application scenarios. It comes pre-packaged with core logic (like different agent using different tools, evaluation, human in the loop) relevant to a specific use case or industry. While functional, a Sample Agent typically requires customization (e.g., adjusting specific responses or integrating with external systems) to be fully operational. Each agent includes instructions on how it can be customized.
 
