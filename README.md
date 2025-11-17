@@ -4,7 +4,7 @@
 
 Welcome to the Sample Agent repository! This collection provides a ready-to-use agent built on top of the [Agent Development Kit](https://github.com/google/adk-python), designed to accelerate your development process.  This agent covers a range of common use cases and complexities, from simple conversational bots to complex multi-agent workflows.
 
-## ✨ What are Sample Agent?
+## ✨ What is Sample Agent?
 
 A Sample Agent is a functional starting point for a foundational agent designed for common application scenarios. It comes pre-packaged with core logic (like different agent using different tools, evaluation, human in the loop) relevant to a specific use case or industry. While functional, a Sample Agent typically requires customization (e.g., adjusting specific responses or integrating with external systems) to be fully operational. Each agent includes instructions on how it can be customized.
 
@@ -26,9 +26,94 @@ You can install the ADK samples via cloning it from the public repository by
     git clone https://github.com/iamharshtrivedi/ai-agent-google-adk.git
     ```
 
+**Create a file \__init\__.py in folder multi_tool_agent/**
+
+```bash
+from . import agent
+```
+**Create a file agent.py in folder multi_tool_agent/**
+```bash
+import datetime
+from zoneinfo import ZoneInfo
+from google.adk.agents import Agent
+
+def get_weather(city: str) -> dict:
+    """Retrieves the current weather report for a specified city.
+
+    Args:
+        city (str): The name of the city for which to retrieve the weather report.
+
+    Returns:
+        dict: status and result or error msg.
+    """
+    if city.lower() == "new york":
+        return {
+            "status": "success",
+            "report": (
+                "The weather in New York is sunny with a temperature of 25 degrees"
+                " Celsius (77 degrees Fahrenheit)."
+            ),
+        }
+    else:
+        return {
+            "status": "error",
+            "error_message": f"Weather information for '{city}' is not available.",
+        }
+
+
+def get_current_time(city: str) -> dict:
+    """Returns the current time in a specified city.
+
+    Args:
+        city (str): The name of the city for which to retrieve the current time.
+
+    Returns:
+        dict: status and result or error msg.
+    """
+
+    if city.lower() == "new york":
+        tz_identifier = "America/New_York"
+    else:
+        return {
+            "status": "error",
+            "error_message": (
+                f"Sorry, I don't have timezone information for {city}."
+            ),
+        }
+
+    tz = ZoneInfo(tz_identifier)
+    now = datetime.datetime.now(tz)
+    report = (
+        f'The current time in {city} is {now.strftime("%Y-%m-%d %H:%M:%S %Z%z")}'
+    )
+    return {"status": "success", "report": report}
+
+
+root_agent = Agent(
+    name="weather_time_agent",
+    model="gemini-2.0-flash",
+    description=(
+        "Agent to answer questions about the time and weather in a city."
+    ),
+    instruction=(
+        "You are a helpful agent who can answer user questions about the time and weather in a city."
+    ),
+    tools=[get_weather, get_current_time],
+)
+```
+
+**Create a file .env in folder multi_tool_agent/**
+
+```bash
+GOOGLE_GENAI_USE_VERTEXAI=FALSE
+GOOGLE_API_KEY=PASTE_YOUR_ACTUAL_API_KEY_HERE
+```
+
+**Replace the value PASTE_YOUR_ACTUAL_API_KEY_HERE with your real API key obtained from Google AI Studio.**
+
 3.  **Explore the Agent:**
    ```bash
-    cd multi_tool_agents
+    cd multi_tool_agents/agent.py
    ```
 *   Navigate to the `multi_tool_agents/` directory.
 *   The `multi_tool_agents/README.md` provides an overview and categorization of the available agent.
@@ -49,6 +134,8 @@ You can install the ADK samples via cloning it from the public repository by
         agent.py
         .env
 ```
+
+
 
 ## ℹ️ Getting help
 
